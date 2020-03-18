@@ -3,6 +3,8 @@ from src.echo import Echo
 from src.exit import Exit
 from src.pwd import Pwd
 from src.wc import Wc
+from src.cd import Cd
+from src.ls import Ls
 from collections import defaultdict
 import re
 
@@ -24,6 +26,8 @@ class Parser:
         self.command["exit"] = Exit.execute
         self.command["pwd"] = Pwd.execute
         self.command["wc"] = Wc.execute
+        self.command["cd"] = Cd.execute
+        self.command["ls"] = Ls.execute
 
     def parse(self, line):
         """
