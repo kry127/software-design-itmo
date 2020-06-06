@@ -11,7 +11,7 @@ class CdLsTest(unittest.TestCase):
         super().__init__(*args)
         self.parser = Parser()
         self.init_root_dir = os.getcwd()
-        self.init_root_dir += '\\test\\'
+        self.init_root_dir += '/test/'
         self.run_cmd(f"cd {self.init_root_dir}")
 
     def setUp(self):
@@ -27,7 +27,7 @@ class CdLsTest(unittest.TestCase):
         result = self.run_cmd("ls")
         result = set(result.split('\n'))
         result.remove('')
-        self.assertEqual({'subDir1', 'subDir2', 'testDir', 'file1.txt', 'file2.txt', 'file3.txt'}, result)
+        self.assertEqual({'subDir1', 'subDir2', 'file1.txt', 'file2.txt', 'file3.txt'}, result)
 
     def test_ls2(self):
         result = self.run_cmd("ls subDir1")
